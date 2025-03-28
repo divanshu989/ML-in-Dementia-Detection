@@ -1,0 +1,16 @@
+{
+  "name": "dementia",
+  "version": "1.0.0",
+  "description": "Machine learning project for dementia detection",
+  "scripts": {
+    "start": "python api/app.py"
+  },
+  "dependencies": {
+    "firebase": "^11.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16"
+  }
+}
