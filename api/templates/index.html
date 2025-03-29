@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroScan AI - Dementia Detection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        /* Enhanced Neumorphic Shadows */
+        .neumorphic-shadow {
+            box-shadow: 
+                6px 6px 12px rgba(0, 0, 0, 0.08), 
+                -6px -6px 12px rgba(255, 255, 255, 0.9);
+        }
+        .neumorphic-inset-shadow {
+            box-shadow: 
+                inset 4px 4px 8px rgba(0, 0, 0, 0.05), 
+                inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #3b82f6, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-100 text-gray-900 font-sans selection:bg-blue-200">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-100 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 rounded-full neumorphic-shadow bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800">NeuroScan AI</span>
+                </div>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#features" class="text-gray-600 hover:text-blue-600 transition px-4 py-2 rounded-full neumorphic-shadow bg-gray-100">Features</a>
+                    <a href="#technology" class="text-gray-600 hover:text-blue-600 transition px-4 py-2 rounded-full neumorphic-shadow bg-gray-100">Technology</a>
+                    <a href="#research" class="text-gray-600 hover:text-blue-600 transition px-4 py-2 rounded-full neumorphic-shadow bg-gray-100">Research</a>
+                    <button id="getStartedBtn" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition neumorphic-shadow">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl font-extrabold tracking-tight text-gray-900 sm:text-6xl">
+                Early Detection of Dementia <br />
+                <span class="text-blue-600">Powered by Advanced Machine Learning</span>
+            </h1>
+            <p class="mt-6 text-xl text-gray-600 max-w-3xl mx-auto">
+                Revolutionizing neurological healthcare through precise, AI-driven diagnostic technologies that enable early intervention and personalized care.
+            </p>
+            <div class="mt-10 flex justify-center space-x-6">
+                <button id="exploreSolutionBtn" class="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition neumorphic-shadow">
+                    Explore Solution
+                </button>
+                <button id="learn" class="bg-gray-100 text-blue-600 px-8 py-3 rounded-full text-lg font-semibold neumorphic-shadow hover:bg-gray-200 transition">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="bg-gradient-to-br from-blue-50 to-blue-100 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-4">
+                    Revolutionizing Dementia Detection
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our cutting-edge AI technology transforms neurological assessment through innovative approaches that prioritize early detection and personalized care.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-4 transition duration-300 ease-in-out">
+                    <div class="flex items-center mb-6">
+                        <div class="p-4 rounded-full bg-blue-100 text-blue-600 mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-800">Precision Diagnostics</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Leverage advanced machine learning algorithms with over 95% accuracy in detecting early-stage cognitive decline.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Neural network-powered analysis
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Multi-parameter cognitive assessment
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-4 transition duration-300 ease-in-out">
+                    <div class="flex items-center mb-6">
+                        <div class="p-4 rounded-full bg-purple-100 text-purple-600 mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-800">Comprehensive Analysis</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Holistic assessment of cognitive functions using advanced neural networks and comprehensive screening.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Memory pattern recognition
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Cognitive function mapping
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-4 transition duration-300 ease-in-out">
+                    <div class="flex items-center mb-6">
+                        <div class="p-4 rounded-full bg-green-100 text-green-600 mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-800">Predictive Insights</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Proactive risk assessment and personalized healthcare recommendations to support early intervention.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Personalized risk scoring
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Tailored intervention strategies
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="technology" class="py-16 bg-gradient-to-r from-blue-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-extrabold text-gray-900 leading-tight">
+                    Our Advanced Technology
+                </h2>
+                <p class="mt-4 text-gray-600 text-xl font-medium">
+                    Breakthrough AI-Powered Neurological Assessment
+                </p>
+            </div>
+    
+            <!-- Technology Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Left Side -->
+                <div class="space-y-8">
+                    
+                    <!-- Machine Learning Card -->
+                    <div class="bg-gradient-to-r from-gray-100 to-gray-200 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
+                        <h3 class="text-2xl font-extrabold text-gray-900 mb-4">
+                            <span class="text-indigo-500 gradient-text">Machine Learning Architecture</span>
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Our proprietary neural network combines advanced deep learning algorithms with extensive medical datasets to provide unprecedented accuracy in early dementia detection.
+                        </p>
+                    </div>
+    
+                    <!-- Multi-Modal Analysis Card -->
+                    <div class="bg-gradient-to-r from-gray-100 to-gray-200 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
+                        <h3 class="text-2xl font-extrabold text-gray-900 mb-4">
+                            <span class="text-indigo-500 gradient-text">Multi-Modal Analysis</span>
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            We integrate multiple data sources, including cognitive assessments, neurological imaging, and genetic markers, to create a comprehensive risk profile.
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Right Side - Image -->
+                <div class="rounded-xl overflow-hidden shadow-lg bg-gray-200 w-72 h-72 flex items-center justify-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+                    <p class="text-gray-700 font-bold text-4xl uppercase transition-transform transform hover:scale-110">
+                        AI Tech
+                    </p>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Research & Validation Section -->
+    <section id="research" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-gray-900">Scientific Validation</h2>
+                <p class="mt-4 text-xl text-gray-600">Rigorous Research Behind Our Technology</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl neumorphic-shadow">
+                    <div class="text-center">
+                        <div class="p-4 rounded-full inline-block neumorphic-inset-shadow mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Clinical Trials</h3>
+                        <p class="text-gray-600">Validated across 5+ leading research institutions with 98.2% accuracy.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl neumorphic-shadow">
+                    <div class="text-center">
+                        <div class="p-4 rounded-full inline-block neumorphic-inset-shadow mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Peer Reviews</h3>
+                        <p class="text-gray-600">Published in top neurological and AI research journals.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl neumorphic-shadow">
+                    <div class="text-center">
+                        <div class="p-4 rounded-full inline-block neumorphic-inset-shadow mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Continuous Improvement</h3>
+                        <p class="text-gray-600">Regular model updates based on latest medical research.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Impact Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-gray-900">Transforming Patient Care</h2>
+                <p class="mt-4 text-xl text-gray-600">Early Detection Means Better Outcomes</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="bg-gray-100 p-8 rounded-xl neumorphic-shadow">
+                    <h3 class="text-3xl font-bold mb-6 gradient-text">Early Intervention Matters</h3>
+                    <ul class="space-y-4 text-gray-700">
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Up to 60% slower disease progression
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Personalized treatment strategies
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Enhanced quality of life
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="space-y-6">
+                        <div class="bg-gray-100 p-6 rounded-xl neumorphic-shadow">
+                            <h4 class="text-2xl font-bold mb-3 gradient-text">Proactive Healthcare</h4>
+                            <p class="text-gray-700">
+                                Our AI doesn't just detect risks—it provides actionable insights for patients and healthcare providers.
+                            </p>
+                        </div>
+                        <div class="bg-gray-100 p-6 rounded-xl neumorphic-shadow">
+                            <h4 class="text-2xl font-bold mb-3 gradient-text">Personalized Approach</h4>
+                            <p class="text-gray-700">
+                                Tailored risk assessment considering individual genetic, lifestyle, and medical history factors.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-blue-600 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-extrabold mb-6">Ready to Take Control of Your Neurological Health?</h2>
+            <p class="text-xl mb-10 max-w-3xl mx-auto">
+                Join thousands of individuals who are proactively managing their cognitive well-being with NeuroScan AI.
+            </p>
+            <div class="flex justify-center space-x-6">
+                <button  id="scan" class="bg-white text-blue-600 px-10 py-4 rounded-full text-lg font-semibold hover:bg-blue-50 transition neumorphic-shadow">
+                    Start Assessment
+                </button>
+                <button id="foot" class="border-2 border-white text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-800 py-12 neumorphic-inset-shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2024 NeuroScan AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add event listeners for redirection
+        document.getElementById('getStartedBtn').addEventListener('click', function() {
+            // This can be replaced with Flask route in the backend
+            window.location.href = './1'; // Redirects to 1.html or Flask route
+        });
+
+        document.getElementById('exploreSolutionBtn').addEventListener('click', function() {
+            // This can be replaced with Flask route in the backend
+            window.location.href = './1'; // Redirects to 1.html or Flask route
+        });
+        document.getElementById('scan').addEventListener('click', function() {
+            // This can be replaced with Flask route in the backend
+            window.location.href = './scan'; // Redirects to 1.html or Flask route
+        });
+        document.getElementById('learn').addEventListener('click', function() {
+            // This can be replaced with Flask route in the backend
+            window.location.href = './learn'; // Redirects to 1.html or Flask route
+        });
+        document.getElementById('foot').addEventListener('click', function() {
+            // This can be replaced with Flask route in the backend
+            window.location.href = './learn'; // Redirects to 1.html or Flask route
+        });
+    </script>
+</body>
+</html>

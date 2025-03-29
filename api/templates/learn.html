@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dementia Support & Understanding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f0f4f8 0%, #e6eaf3 100%);
+            font-family: 'Arial', sans-serif;
+        }
+        .neomorphic-card {
+            box-shadow: 
+                10px 10px 20px rgba(166, 180, 200, 0.5), 
+                -10px -10px 20px rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+        .neomorphic-card:hover {
+            transform: scale(1.03);
+        }
+        .svg-illustration {
+            max-width: 100%;
+            height: 200px; /* Smaller height */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav class="bg-white neomorphic-card p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3182ce" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                </svg>
+                <h1 class="text-2xl font-bold text-blue-600">Dementia Support</h1>
+            </div>
+            <div class="space-x-6">
+                <a href="#" class="text-blue-600 hover:text-blue-800 transition">Home</a>
+                <a href="#" class="text-blue-600 hover:text-blue-800 transition">About</a>
+                <a href="#" class="text-blue-600 hover:text-blue-800 transition">Resources</a>
+                <a href="#" class="text-blue-600 hover:text-blue-800 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Text Section -->
+            <div class="neomorphic-card p-8 bg-white">
+                <h2 class="text-3xl font-bold text-blue-700 mb-6">Understanding Dementia</h2>
+                <div class="space-y-4 text-gray-700">
+                    <p class="leading-relaxed">
+                        Dementia is a complex neurological condition that affects millions worldwide. It's not a specific disease, but a syndrome characterized by progressive cognitive decline.
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <h3 class="font-semibold text-blue-700 mb-2">Key Aspects:</h3>
+                        <ul class="list-disc list-inside text-gray-600">
+                            <li>Memory loss beyond normal aging</li>
+                            <li>Challenges in communication</li>
+                            <li>Impaired reasoning and judgment</li>
+                            <li>Changes in personality and behavior</li>
+                        </ul>
+                    </div>
+                    <div class="bg-teal-50 p-4 rounded-lg border-l-4 border-teal-500">
+                        <h3 class="font-semibold text-teal-700 mb-2">Global Impact:</h3>
+                        <p class="text-gray-600 text-sm">
+                            Over 55 million people worldwide live with dementia, with nearly 10 million new cases every year.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SVG Illustrations Section -->
+            <div class="neomorphic-card bg-white p-6 rounded-xl shadow-lg flex flex-col space-y-6">
+                <!-- First SVG Illustration -->
+                <div class="rounded-lg overflow-hidden shadow-lg transform transition-all hover:scale-105">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" class="svg-illustration">
+                        <rect width="400" height="200" fill="#f0f4f8"/>
+                        <circle cx="200" cy="100" r="60" fill="#3182ce" opacity="0.2"/>
+                        <path d="M150 80 Q200 40 250 80 T350 80" stroke="#3182ce" fill="none" stroke-width="3"/>
+                        <text x="200" y="160" text-anchor="middle" font-size="16" fill="#2c5282">
+                            Brain Health Insights
+                        </text>
+                    </svg>
+                </div>
+
+                <!-- Second SVG Illustration -->
+                <div class="rounded-lg overflow-hidden shadow-lg transform transition-all hover:scale-105">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" class="svg-illustration">
+                        <rect width="400" height="200" fill="#e6eaf3"/>
+                        <path d="M100 50 L200 120 L300 50" stroke="#8856d5" fill="none" stroke-width="4"/>
+                        <circle cx="200" cy="120" r="20" fill="#8856d5" opacity="0.3"/>
+                        <text x="200" y="180" text-anchor="middle" font-size="16" fill="#5a3d7a">
+                            Cognitive Support
+                        </text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Information Section -->
+        <div class="grid md:grid-cols-3 gap-8 mt-12">
+            <div class="neomorphic-card bg-white p-6">
+                <h3 class="text-xl font-bold text-teal-700 mb-4">Support Strategies</h3>
+                <p class="text-gray-600 mb-4">
+                    Developing effective support strategies can significantly improve quality of life for individuals living with dementia.
+                </p>
+                <ul class="text-sm text-gray-500 space-y-2">
+                    <li>• Establish consistent routines</li>
+                    <li>• Create a safe living environment</li>
+                    <li>• Encourage social interaction</li>
+                    <li>• Use memory aids and reminders</li>
+                </ul>
+            </div>
+            <div class="neomorphic-card bg-white p-6">
+                <h3 class="text-xl font-bold text-purple-700 mb-4">Early Detection</h3>
+                <p class="text-gray-600 mb-4">
+                    Recognizing early signs and seeking professional help can lead to better management and support.
+                </p>
+                <div class="bg-purple-50 p-3 rounded-lg">
+                    <p class="text-sm text-purple-700 font-semibold">Warning Signs:</p>
+                    <ul class="text-xs text-gray-600 space-y-1">
+                        <li>• Memory loss disrupting daily life</li>
+                        <li>• Difficulty planning or solving problems</li>
+                        <li>• Challenges completing familiar tasks</li>
+                        <li>• Confusion with time or place</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="neomorphic-card bg-white p-6">
+                <h3 class="text-xl font-bold text-indigo-700 mb-4">Care Resources</h3>
+                <p class="text-gray-600 mb-4">
+                    Access comprehensive resources, support groups, and professional guidance.
+                </p>
+                <div class="bg-indigo-50 p-3 rounded-lg">
+                    <p class="text-sm text-indigo-700 font-semibold">Key Resources:</p>
+                    <ul class="text-xs text-gray-600 space-y-1">
+                        <li>• Alzheimer's Association</li>
+                        <li>• National Institute on Aging</li>
+                        <li>• Local Memory Care Centers</li>
+                        <li>• Online Support Communities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white neomorphic-card p-6 mt-12">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-gray-600">
+                © 2024 Dementia Support Network. All Rights Reserved.
+            </div>
+            <div class="space-x-4">
+                <a href="#" class="text-blue-600 hover:text-blue-800">Privacy Policy</a>
+                <a href="#" class="text-blue-600 hover:text-blue-800">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

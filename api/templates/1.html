@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Healthcare - Detection of Dementia</title>
+    <!-- Include Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neugray: '#e0e5ec',
+                    },
+                    boxShadow: {
+                        'neu': '9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5)',
+                        'neu-inset': 'inset 9px 9px 16px rgb(163,177,198,0.6), inset -9px -9px 16px rgba(255,255,255, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .transition-neu {
+                transition: all 0.2s ease-in-out;
+            }
+            .hover-neu:hover {
+                box-shadow: 6px 6px 10px rgb(163,177,198,0.6), -6px -6px 10px rgba(255,255,255, 0.5);
+            }
+        }
+    </style>
+</head>
+<body class="bg-neugray min-h-screen">
+    <!-- Main Content Container -->
+    <div class="relative min-h-screen pt-24 bg-neugray">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-neugray rounded-2xl shadow-neu p-10">
+                <h1 class="text-5xl font-extrabold mb-8 text-center text-gray-900">
+                    Introduction to HealthCare - 
+                    <span class="text-blue-600">Detection of Dementia</span>
+                </h1>
+
+                <section id="problem" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800">What are we trying to solve:</h2>
+                    <p class="text-xl text-gray-700 leading-relaxed">
+                        Dementia is a complex neurological condition characterized by a decline in mental ability severe enough to interfere with daily life. It's not a specific disease, but an umbrella term describing a group of symptoms associated with memory loss and reduced cognitive function. Our goal is to develop a robust machine learning model that enables clinicians to detect dementia proactively, transforming early intervention strategies.
+                    </p>
+                </section>
+
+                <section id="solution" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800">Machine Learning Algorithm:</h2>
+                    <div class="bg-neugray p-6 rounded-xl shadow-neu-inset">
+                        <h3 class="text-2xl font-semibold mb-3 text-blue-800">Random Forest Classifier</h3>
+                        <ul class="text-xl text-gray-700 space-y-3 list-disc pl-5">
+                            <li>Designed for exceptional speed and performance</li>
+                            <li>Excels in structured and tabular datasets</li>
+                            <li>Optimal for complex classification and predictive modeling problems</li>
+                            <li>Provides high accuracy and robust feature importance analysis</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <div class="flex justify-center space-x-6 mt-10">
+                    <a id="data" class="bg-neugray text-blue-600 px-8 py-3 rounded-full text-lg font-semibold shadow-neu transition-neu hover-neu">
+                        Data Description
+                    </a>
+                    <a  id="scan" href="#" class="bg-neugray text-blue-600 px-8 py-3 rounded-full text-lg font-semibold shadow-neu transition-neu hover-neu">
+                        Dementia Detection
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-neugray text-gray-700 py-6 shadow-neu-inset mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2024 NeuroScan AI. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Add event listeners for redirection
+        document.getElementById('scan').addEventListener('click', function() {
+            // This can be replaced with Flask route in the backend
+            window.location.href = './scan'; // Redirects to 1.html or Flask route
+        });
+        document.getElementById('data').addEventListener('click', function() {
+            // This can be replaced with Flask route in the backend
+            window.location.href = '/3'; // Redirects to 1.html or Flask route
+        });
+
+    </script>
+</body>
+</html>

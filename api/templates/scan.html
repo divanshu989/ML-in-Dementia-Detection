@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dementia Risk Assessment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e6eaf0 100%);
+        }
+        .neumorphic {
+            background: #e6eaf0;
+            border-radius: 20px;
+            box-shadow: 
+                8px 8px 15px rgba(163, 177, 198, 0.4), 
+                -8px -8px 15px rgba(255, 255, 255, 0.8);
+        }
+        .neumorphic-input {
+            background: #e6eaf0;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 
+                inset 4px 4px 8px rgba(163, 177, 198, 0.4),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+        }
+        .neumorphic-input:focus {
+            outline: none;
+            box-shadow: 
+                inset 4px 4px 8px rgba(163, 177, 198, 0.6),
+                inset -4px -4px 8px rgba(255, 255, 255, 1);
+        }
+        .neumorphic-button {
+            background: #e6eaf0;
+            border-radius: 12px;
+            box-shadow: 
+                4px 4px 8px rgba(163, 177, 198, 0.4), 
+                -4px -4px 8px rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+        }
+        .neumorphic-button:hover {
+            box-shadow: 
+                6px 6px 10px rgba(163, 177, 198, 0.5), 
+                -6px -6px 10px rgba(255, 255, 255, 1);
+        }
+        .neumorphic-button:active {
+            box-shadow: 
+                inset 4px 4px 8px rgba(163, 177, 198, 0.4),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="container mx-auto max-w-6xl">
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Information Section -->
+            <div class="bg-white neumorphic p-8 space-y-6 self-start">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-blue-700 mb-4">Dementia Risk Assessment</h2>
+                    <p class="text-gray-600 mb-6">
+                        Our advanced machine learning model helps assess the potential risk of dementia based on key neurological and demographic indicators.
+                    </p>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-blue-800 mb-2">What We Measure</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Cognitive Function (MMSE)</li>
+                            <li>Intracranial Volume (eTIV)</li>
+                            <li>Brain Volume (nWBV)</li>
+                            <li>Age and Education Level</li>
+                            <li>Socioeconomic Status (SES)</li>
+                            <li>Apoe4 Status (ASF)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h3 class="font-semibold text-green-800 mb-2">Important Note</h3>
+                        <p class="text-gray-700">
+                            ```html
+This is a screening tool. Always consult with a healthcare professional for a comprehensive diagnosis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Section -->
+            <div class="neumorphic p-8">
+                <form id="dementiaForm" class="space-y-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                placeholder="Enter Patient Name" 
+                                class="w-full neumorphic-input p-3"
+                                oninput="checkFormFields()"
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Gender</label>
+                            <select 
+                                id="gender" 
+                                class="w-full neumorphic-input p-3"
+                                onchange="checkFormFields()"
+                            >
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Age</label>
+                            <input 
+                                type="number" 
+                                id="age" 
+                                value="0" 
+                                class="w-full neumorphic-input p-3"
+                                oninput="checkFormFields()"
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">EDUC</label>
+                            <input 
+                                type="number" 
+                                id="educ" 
+                                value="0" 
+                                class="w-full neumorphic-input p-3"
+                                oninput="checkFormFields()"
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">SES</label>
+                            <input 
+                                type="number" 
+                                id="ses" 
+                                value="0" 
+                                class="w-full neumorphic-input p-3"
+                                oninput="checkFormFields()"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">MMSE Score</label>
+                            <input 
+                                type="number" 
+                                id="mmse" 
+                                value="0" 
+                                class="w-full neumorphic-input p-3"
+                                oninput="checkFormFields()"
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">eTIV</label>
+                            <input 
+                                type="number" 
+                                id="etiv" 
+                                value="0" 
+                                class="w-full neumorphic-input p-3"
+                                oninput="checkFormFields()"
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">nWBV</label>
+                            <input 
+                                type="number" 
+                                id="nwbv" 
+                                value="0" 
+                                class="w-full neumorphic-input p-3"
+                                oninput="checkFormFields()"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">ASF</label>
+                            <input 
+                                type="number" 
+                                id="asf" 
+                                value="0" 
+                                class="w-full neumorphic-input p-3"
+                                oninput="checkFormFields()"
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">CDR</label>
+                            <select 
+                                id="cdr" 
+                                class="w-full neumorphic-input p-3"
+                                onchange="checkFormFields()"
+                            >
+                                <option value="0">0</option>
+                                <option value="0.5">0.5</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">APOE4 Genotype</label>
+                            <select 
+                                id="apoe4" 
+                                class="w-full neumorphic-input p-3"
+                                onchange="checkFormFields()"
+                            >
+                                <option value="0">0 Copies</option>
+                                <option value="1">1 Copy</option>
+                                <option value="2">2 Copies</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Family History</label>
+                            <select 
+                                id="familyHistory" 
+                                class="w-full neumorphic-input p-3"
+                                onchange=" ```html
+                                checkFormFields()"
+                            >
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button 
+                            type="button" 
+                            id="submitBtn" 
+                            onclick="infer()" 
+                            disabled
+                            class="w-full neumorphic-button py-3 font-semibold text-blue-700 hover:text-blue-900 transition-all"
+                        >
+                            Assess Dementia Risk
+                        </button>
+                    </div>
+                </form>
+
+                <div id="result" class="mt-6 text-center"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function infer() {
+    var gen = document.getElementById("gender").value === "Male" ? 1 : 0;
+    var age = parseFloat(document.getElementById("age").value);
+    var educ = parseFloat(document.getElementById("educ").value);
+    var ses = parseFloat(document.getElementById("ses").value);
+    var mmse = parseFloat(document.getElementById("mmse").value);
+    var etiv = parseFloat(document.getElementById("etiv").value);
+    var nwbv = parseFloat(document.getElementById("nwbv").value);
+    var asf = parseFloat(document.getElementById("asf").value);
+    var apoe4 = parseFloat(document.getElementById("apoe4").value);
+    var familyHistory = parseFloat(document.getElementById("familyHistory").value);
+    var cdr = parseFloat(document.getElementById("cdr").value);
+
+    const data = {
+        gender: gen,
+        age: age,
+        educ: educ,
+        ses: ses,
+        mmse: mmse,
+        etiv: etiv,
+        nwbv: nwbv,
+        asf: asf,
+        apoe4: apoe4,
+        familyHistory: familyHistory,
+        cdr: cdr
+    };
+
+    // Simulated API call (replace with actual endpoint)
+    fetch('/predict', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        var resultDiv = document.getElementById("result");
+        var output = data.prediction === 0 ? 
+            `<div class='bg-red-100 border-l-4 border-red-500 p-4'>
+                <p class='text-red-700 font-bold'>Dementia Detected</p>
+                <p class='text-red-600 mt-2'>Recommendation: Consult a neurologist for further evaluation</p>
+            </div>` : 
+            `<div class='bg-green-100 border-l-4 border-green-500 p-4'>
+                <p class='text-green-700 font-bold'>No Dementia Detected</p>
+                <p class='text-green-600 mt-2'>Continue regular health monitoring</p>
+            </div>`;
+
+        // Add probability information if available
+        if (data.probabilities) {
+            output += `<div class='mt-4 text-sm text-gray-700'>
+                <p>Confidence Levels:</p>
+                <p>Probability of Dementia: ${(data.probabilities[0] * 100).toFixed(1)}%</p>
+                <p>Probability of No Dementia: ${(data.probabilities[1] * 100).toFixed(1)}%</p>
+            </div>`;
+        }
+        
+        resultDiv.innerHTML = output;
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        var resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = '<p class="text-red-500 bg-red-100 p-4 rounded">Error processing assessment. Please check all inputs and try again.</p>';
+    });
+}
+
+function checkFormFields() {
+    var name = document.getElementById("name").value;
+    var gender = document.getElementById("gender").value;
+    var age = document.getElementById("age").value;
+    var educ = document.getElementById("educ").value;
+    var ses = document.getElementById("ses").value;
+    var mmse = document.getElementById("mmse").value;
+    var etiv = document.getElementById("etiv").value;
+    var nwbv = document.getElementById("nwbv").value;
+    var asf = document.getElementById("asf").value;
+    var apoe4 = document.getElementById("apoe4").value;
+    var familyHistory = document.getElementById("familyHistory").value;
+    var cdr = document.getElementById("cdr").value;
+
+    // Additional validation
+    var validAge = age > 0 && age < 120;
+    var validMMSE = mmse >= 0 && mmse <= 30;
+    var validSES = ses >= 1 && ses <= 5;
+
+    var allFieldsFilled = name && gender && age && educ && ses && mmse && etiv && nwbv && asf && apoe4 && familyHistory && cdr;
+
+    document.getElementById("submitBtn").disabled = !(allFieldsFilled && validAge && validMMSE && validSES);
+}
+
+// Prevent default form submission
+document.getElementById("dementiaForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+});
+
+// Add input event listener for form fields
+document.getElementById("dementiaForm").addEventListener("input", checkFormFields);
+    </script>
+</body>
+</html>
